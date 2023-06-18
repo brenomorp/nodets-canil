@@ -15,4 +15,8 @@ app.engine('mustache', mustache());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(mainRoutes);
 
+app.use((req, res) => {
+  res.render('pages/404');
+});
+
 app.listen(process.env.PORT);
